@@ -1,36 +1,26 @@
+import { useState } from "react";
 import "./App.css";
+import MenuBar from "./components/menu/menu-bar";
+import AllDataTable from "./components/tables/all-data-table";
+import { orders } from "./data/orders_data";
 
 function App() {
+  const [selectedBtn, setSelectedBtn] = useState("all-data");
+
+  function tableRender() {
+    switch (selectedBtn) {
+      case "all-data":
+        return <AllDataTable data={orders} />;
+        break;
+      default:
+        return <AllDataTable data={orders} />;
+    }
+  }
+
   return (
     <>
-      <input type="text" placeholder="Search..." className="search-input" />
-
-      <select className="custom-select">
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </select>
-
-      <div className="table-container">
-        <table className="custom-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>john@example.com</td>
-              <td>Admin</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <button className="btn">Submit</button>
+      <MenuBar setSelectedBtn={setSelectedBtn} selectedBtn={selectedBtn} />
+      {tableRender()}
     </>
   );
 }
