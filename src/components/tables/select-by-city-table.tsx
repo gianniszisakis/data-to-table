@@ -18,7 +18,7 @@ export default function SelectByCityTable({ data }: SelectByCityTableProps) {
 
   return (
     <>
-      <h1>{`All data table`}</h1>
+      <h1>{`${selectedCity} Data`}</h1>
       <div className="w-[50%]">
         <label>
           Select City
