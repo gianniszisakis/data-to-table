@@ -12,6 +12,12 @@ export default function MenuBar({ selectedBtn, setSelectedBtn }: MenuBarProps) {
       >
         All data
       </button>
+      <button
+        className={`btn ${selectedBtn ? "active-btn" : ""}`}
+        onClick={() => setSelectedBtn("total-amount")}
+      >
+        Total Amount
+      </button>
     </div>
   );
 }
