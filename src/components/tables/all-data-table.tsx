@@ -76,9 +76,7 @@ export default function AllDataTable({ data }: AllDataTableProps) {
             <tbody>{tableRender()}</tbody>
           </table>
         ) : (
-          <tr>
-            <td colSpan={5}>No Data</td>
-          </tr>
+          <p>No data</p>
         )}
       </div>
     </>
