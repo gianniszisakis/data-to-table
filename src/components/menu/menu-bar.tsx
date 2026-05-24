@@ -18,6 +18,12 @@ export default function MenuBar({ selectedBtn, setSelectedBtn }: MenuBarProps) {
       >
         Total Amount
       </button>
+      <button
+        className={`btn ${selectedBtn === "select-city" ? "active-btn" : ""}`}
+        onClick={() => setSelectedBtn("select-city")}
+      >
+        Filter by City
+      </button>
     </div>
   );
 }
