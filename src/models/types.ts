@@ -17,3 +17,12 @@ export type Order = {
   createdAt: string;
   items: OrderItem[];
 };
+
+export interface TotalAmountData {
+  id: string;
+  customerName: string;
+  city: string;
+  status: "paid" | "pending" | "cancelled";
+  total_amount: number;
+  item_count: number;
+}
