@@ -3,6 +3,7 @@ import "./App.css";
 import MenuBar from "./components/menu/menu-bar";
 import AllDataTable from "./components/tables/all-data-table";
 import { orders } from "./data/orders_data";
+import TotalAmountTable from "./components/tables/total-amount-table";
 
 function App() {
   const [selectedBtn, setSelectedBtn] = useState("all-data");
@@ -11,6 +12,9 @@ function App() {
     switch (selectedBtn) {
       case "all-data":
         return <AllDataTable data={orders} />;
+        break;
+      case "total-amount":
+        return <TotalAmountTable data={orders} />;
         break;
       default:
         return <AllDataTable data={orders} />;
