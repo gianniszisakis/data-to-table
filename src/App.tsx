@@ -5,6 +5,7 @@ import AllDataTable from "./components/tables/all-data-table";
 import { orders } from "./data/orders_data";
 import TotalAmountTable from "./components/tables/total-amount-table";
 import SelectByCityTable from "./components/tables/select-by-city-table";
+import ItemCategoryTable from "./components/tables/item-category-table";
 
 function App() {
   const [selectedBtn, setSelectedBtn] = useState("all-data");
@@ -19,6 +20,9 @@ function App() {
         break;
       case "select-city":
         return <SelectByCityTable data={orders} />;
+        break;
+      case "item-category":
+        return <ItemCategoryTable data={orders} />;
         break;
       default:
         return <AllDataTable data={orders} />;

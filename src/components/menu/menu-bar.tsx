@@ -24,6 +24,12 @@ export default function MenuBar({ selectedBtn, setSelectedBtn }: MenuBarProps) {
       >
         Filter by City
       </button>
+      <button
+        className={`btn ${selectedBtn === "item-category" ? "active-btn" : ""}`}
+        onClick={() => setSelectedBtn("item-category")}
+      >
+        Filter by Item Category
+      </button>
     </div>
   );
 }
